@@ -17,7 +17,7 @@ import javax.inject.Singleton
 class ProviderModule {
     @Provides
     @Named("BaseUrl")
-    fun provideBaseUrl() = "https://newsapi.org/v2/".toHttpUrl()//inyectar url
+    fun provideBaseUrl() = "https://restapi-e5ed3-default-rtdb.firebaseio.com/".toHttpUrl()//inyectar url
 
     @Singleton
     @Provides

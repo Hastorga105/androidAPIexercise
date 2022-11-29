@@ -34,6 +34,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    /*
+                    //
                     val navController = rememberNavController()
                         NavHost(
                             navController = navController,
@@ -45,7 +47,9 @@ class MainActivity : ComponentActivity() {
                             composable("${Destinations.DETAILS_SCREEN}/{newTitle}"){
                                 //ATODO
                             }
-                        }
+                        }*/
+
+                    ListScreen()
 
                 }
             }
@@ -59,13 +63,13 @@ class MainActivity : ComponentActivity() {
 fun DefaultPreview() {
     ProjectTheme {
         ListScreen(
-            navController = rememberNavController(),
+            //navController = rememberNavController(),
             news = arrayListOf(
                 News(
-                    "Title", "Content", "author", "url", "url"
+                    "Title", "Content", "url"
                 ),
                 News(
-                    "Title 2", "Content 2", "author", "url", "url"
+                    "Title 2", "Content 2", "url"
                 ),
             )
         )
