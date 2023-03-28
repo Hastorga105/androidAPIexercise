@@ -1,6 +1,6 @@
 package com.android.project.model
 
-data class News (
+data class Data (
     //Iguales a las de la api
     var title: String,
     var content: String?,
@@ -8,4 +8,5 @@ data class News (
     var url: String,
      */
     var urlToImage: String,
-        )
+    var micon: String,
+    )

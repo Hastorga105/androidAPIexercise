@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.nio.charset.StandardCharsets
 import java.security.cert.CertPath
 
-class NewsRepositoryTest {
+class DataRepositoryTest {
     private val mockWebServer = MockWebServer()
 
     private val newsProvider = Retrofit.Builder()

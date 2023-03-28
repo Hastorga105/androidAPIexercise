@@ -1,27 +1,24 @@
 package com.android.project
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.android.project.model.News
 import com.android.project.ui.theme.ProjectTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-object Destinations {
-    const val LIST_SCREEN = "LIST_SCREEN"
-    const val DETAILS_SCREEN = "DETAILS_SCREEN"
-}
+val font = FontFamily(
+    Font(R.font.rajdhaniregular),
+    Font(R.font.rajdhanibold, weight = FontWeight.Bold)
+)
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -32,25 +29,10 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    //color = MaterialTheme.colors.background
+                    color = Color.Black
                 ) {
-                    /*
-                    //
-                    val navController = rememberNavController()
-                        NavHost(
-                            navController = navController,
-                            startDestination = Destinations.LIST_SCREEN
-                            ){
-                            composable(Destinations.LIST_SCREEN){
-                                ListScreen(navController)
-                            }
-                            composable("${Destinations.DETAILS_SCREEN}/{newTitle}"){
-                                //ATODO
-                            }
-                        }*/
-
-                    ListScreen()
-
+                   ListScreen()
                 }
             }
         }
@@ -62,16 +44,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ProjectTheme {
-        ListScreen(
-            //navController = rememberNavController(),
-            news = arrayListOf(
-                News(
-                    "Title", "Content", "url"
-                ),
-                News(
-                    "Title 2", "Content 2", "url"
-                ),
-            )
-        )
+        ListScreen()
+
     }
 }

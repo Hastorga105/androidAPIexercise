@@ -1,6 +1,6 @@
 package com.android.project.di
 
-import com.android.project.provider.NewsProvider
+import com.android.project.provider.DataProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,7 +13,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)//Todo lo que inyecto en la clase solo existe en una instancia
+@InstallIn(SingletonComponent::class)//lo que inyecto en la clase solo existe en una instancia
 class ProviderModule {
     @Provides
     @Named("BaseUrl")
@@ -32,7 +32,7 @@ class ProviderModule {
 
     @Provides
     @Singleton
-    fun providerNewsProvider(retrofit: Retrofit): NewsProvider =
-        retrofit.create(NewsProvider::class.java)//instancia de retrofit, regresa un newsprovider
+    fun providerDataProvider(retrofit: Retrofit): DataProvider =
+        retrofit.create(DataProvider::class.java)//instancia de retrofit, regresa un newsprovider
 
 }

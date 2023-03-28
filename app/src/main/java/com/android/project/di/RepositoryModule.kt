@@ -1,8 +1,8 @@
 package com.android.project.di
 
-import com.android.project.provider.NewsProvider
-import com.android.project.repository.NewsRepository
-import com.android.project.repository.NewsRepositoryImp
+import com.android.project.provider.DataProvider
+import com.android.project.repository.DataRepository
+import com.android.project.repository.DataRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ import javax.inject.Singleton
 class RepositoryModule {
     @Provides
     @Singleton
-    fun providerNewsRepository(provider: NewsProvider): NewsRepository =
-        NewsRepositoryImp(provider)
+    fun providerDataRepository(provider: DataProvider): DataRepository =
+        DataRepositoryImp(provider)
 }
